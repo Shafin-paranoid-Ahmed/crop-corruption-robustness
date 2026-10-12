@@ -2,7 +2,8 @@
 
 TEST-only image, IoT, and paired corruption; frozen-model evaluation; bootstrap intervals and difference-of-drops analysis; classical and E3 comparison reports. The snapshot contains 361 saved condition metric files. Findings depend on the model and corruption; no broad quantum robustness advantage is claimed. The train-on-corrupted scaffold is unrun.
 
-This is an independent, private research snapshot extracted on 2026-10-12.
+This is an independent local research snapshot extracted on 2026-10-12.
+No GitHub repository or release has been created; future publication is intended to be private.
 It does not require the original thesis checkout or a sibling repository for code imports.
 
 ## Start here
@@ -19,11 +20,11 @@ for checks actually run and their limits.
 
 ## Companion repositories
 
-- [crop-multimodal-baselines](https://github.com/Shafin-paranoid-Ahmed/crop-multimodal-baselines)
-- [crop-quantum-fusion](https://github.com/Shafin-paranoid-Ahmed/crop-quantum-fusion)
-- [crop-corruption-robustness](https://github.com/Shafin-paranoid-Ahmed/crop-corruption-robustness)
+- [crop-multimodal-baselines](../crop-multimodal-baselines/README.md)
+- [crop-quantum-fusion](../crop-quantum-fusion/README.md)
+- [crop-corruption-robustness](../crop-corruption-robustness/README.md)
 
-The baselines repository owns the frozen embedding release. Quantum fusion consumes
+The baselines repository holds the local frozen embedding bundle in `.artifacts/embeddings-v1.zip`. Quantum fusion consumes
 those embeddings, while robustness evaluates frozen models from both projects.
 Each repository includes versioned copies of the small helpers it needs. No submodule
 or implicit sibling-directory lookup is required. [COMPANIONS.json](COMPANIONS.json)
@@ -38,7 +39,7 @@ trusted-label HDC or QCNN protocols. Stage 0 is healthy; stages 1/2/3 are early/
 
 Raw images, sensor files and regenerated corrupted inputs are not distributed here.
 Provide an authorized dataset separately. Split CSVs, saved metrics, selected model
-weights and predictions are retained; frozen embeddings are a private release download.
+weights and predictions are retained; frozen embeddings are present locally and packaged in the local bundle.
 Historical absolute paths inside result files are provenance, not runtime dependencies.
 
 ## Provenance and maintenance
