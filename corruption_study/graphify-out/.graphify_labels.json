@@ -1,0 +1,23 @@
+{
+  "0": "run_corruption_eval.py",
+  "1": "Implementation Report",
+  "2": "corrupt_iot.py",
+  "3": "Corruption Robustness Study",
+  "4": "corrupt_images.py",
+  "5": "enrich_metrics_with_bootstrap.py",
+  "6": "ImageDataset",
+  "7": "generate_report_artifacts.py",
+  "8": "Run Commands",
+  "9": "generate_thesis_report.py",
+  "10": "bootstrap_difference_of_drops.py",
+  "11": "Corruption Study Checklist",
+  "12": "summarize_results.py",
+  "13": "Thesis-Style Corruption Robustness Report",
+  "14": "E3 Corruption Extension Summary",
+  "15": "TestImageDataset",
+  "16": "Secondary Augmented-Training Scaffold",
+  "17": "passthrough_sanity_check.md",
+  "18": "robustness_summary.md",
+  "19": "severity0_sanity_check.md",
+  "20": "run_e3_corruption_parallel.ps1"
+}
