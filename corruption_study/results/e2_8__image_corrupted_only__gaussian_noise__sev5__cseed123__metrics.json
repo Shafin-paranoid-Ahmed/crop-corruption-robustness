@@ -21,7 +21,7 @@
   "severity": 5,
   "corruption_seed": 123,
   "image_root_used": ".\\corruption_study\\data\\corrupted_images\\gaussian_noise\\sev_5\\cseed_123",
-  "iot_csv_used": "G:\\FOR THESIS\\MAIN\\e1_iot_only\\features\\test_iot_features.csv",
+  "iot_csv_used": "WORKSPACE\\e1_iot_only\\features\\test_iot_features.csv",
   "embedding_dir_used": ".\\corruption_study\\data\\corrupted_embeddings\\image_corrupted_only\\gaussian_noise\\sev_5\\cseed_123",
   "num_samples": 5767,
   "note": "Inference only; no training.",

@@ -1,7 +1,7 @@
 # Current standalone runbook
 
 Run from this repository root in native Windows PowerShell. The commands below
-are examples for manual use; extraction does not launch training or regenerate data.
+are examples for manual use; verification does not launch training or regenerate data.
 
 ## Environment
 
@@ -22,12 +22,11 @@ For E3 evaluation also install `requirements-quantum.txt`. Classical evaluation 
 ## Frozen embedding inputs
 
 The Git checkout includes small checkpoints and CSV evidence. Large NPZ inputs
-are excluded from Git but are already present in the three prepared working directories.
-GitHub repositories are private. No embedding release is published. A fresh clone requires
-access to the local embedding bundle and can restore it with:
+are excluded from Git and no embedding release is published. A fresh clone needs
+the local embedding bundle and can restore it with:
 
 ```powershell
-& $PY scripts/fetch_artifacts.py --from-archive 'G:/PROJECTS/RECOVERY/crop-multimodal-baselines/.artifacts/embeddings-v1.zip'
+& $PY scripts/fetch_artifacts.py --from-archive '../crop-multimodal-baselines/.artifacts/embeddings-v1.zip'
 & $PY scripts/verify.py --artifacts
 ```
 
@@ -44,7 +43,7 @@ Use new run names and output directories when rerunning. Do not overwrite archiv
 results or manually promote a new model to canonical without an explicit decision.
 The validation split selects checkpoints; the test set is not a tuning target.
 
-Read `corruption_study/results/THESIS_STYLE_ROBUSTNESS_REPORT.md` and
+Read `corruption_study/results/ROBUSTNESS_SUMMARY_REPORT.md` and
 `corruption_study/results/E3_CORRUPTION_EXTENSION_SUMMARY.md` for archived findings.
 
 ```powershell
@@ -65,5 +64,5 @@ Generation tools take explicit input/output directories; point their outputs int
 archived results, so choose distinct names for new evaluations.
 
 The parallel E3 runner defaults to `.venv/Scripts/python.exe`. Its `-CleanE3Outputs`
-switch deletes existing outputs and is not part of this extraction or verification.
+switch deletes existing outputs and is not part of verification.
 The root verifier reads saved results without rerunning inference or bootstrap draws.

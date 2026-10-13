@@ -1,7 +1,7 @@
 ﻿# Task: Build a corruption-robustness evaluation harness for a multimodal crop-staging project
 
-> **Purpose:** This document is the build plan / Codex prompt for the P2 corruption-robustness
-> study. Direction set with supervisor on 2026-06-09: P2 implements up to E2 only (E0, E1,
+> **Purpose:** This document is the build plan for the phase 2 corruption-robustness
+> study. Direction set on 2026-06-09: phase 2 implements up to E2 only (E0, E1,
 > E2-canonical, E2-8); E3 is proposed as architecture but not implemented. The focus is the
 > claim that **multimodal fusion degrades more gracefully than unimodal models on corrupted
 > test data**. Corruption is applied to TEST data only (primary arm); a train-on-corrupted arm
@@ -9,7 +9,7 @@
 
 ## Context
 
-This thesis compares unimodal and multimodal models for crop-stage / crop-disease classification.
+This project compares unimodal and multimodal models for crop-stage / crop-disease classification.
 
 Implemented model groups:
 
@@ -18,9 +18,9 @@ Implemented model groups:
 * E2-canonical = standard multimodal fusion model
 * E2-8 = multimodal fusion model with 8-dimensional bottleneck / compact fused representation
 
-E3 / VQC / quantum model is **not implemented in P2**.
+E3 / VQC / quantum model is **not implemented in phase 2**.
 
-The P2 thesis claim is:
+The phase 2 project claim is:
 
 > Multimodal fusion degrades more gracefully than unimodal models when TEST data is corrupted.
 
@@ -158,7 +158,7 @@ Test data is evaluated under:
 * severity 3 = moderately corrupted test data
 * severity 5 = severely corrupted test data
 
-Primary P2 scope as of 2026-06-09:
+Primary phase 2 scope as of 2026-06-09:
 
 ```text
 0, 2, 3, 5
@@ -710,7 +710,7 @@ Evaluate severities:
 Where:
 
 * severity 0 = original clean test set
-* severity 2, 3, 5 = materialized corrupted test sets for the primary P2 scope
+* severity 2, 3, 5 = materialized corrupted test sets for the primary phase 2 scope
 
 The non-corrupted modality always stays clean.
 
@@ -877,7 +877,7 @@ drift
 
 Do **not** automatically run every possible 7 x 3 pairing unless explicitly requested.
 
-For the primary P2 study, use exactly two representative paired stress conditions:
+For the primary phase 2 study, use exactly two representative paired stress conditions:
 
 ```text
 canonical paired stress:
@@ -947,7 +947,7 @@ e2_8__both_corrupted__img-defocus_blur__iot-drift__sev5__metrics.json
 ### Full both_corrupted grid (optional, not run)
 
 The full 7 x 3 image/IoT paired grid is optional future work and was not run for the primary
-P2 result. If needed later, it can be produced cheaply by recombination instead of re-running
+phase 2 result. If needed later, it can be produced cheaply by recombination instead of re-running
 the frozen E0/E1 encoders:
 
 ```text
@@ -1162,7 +1162,7 @@ Main formula:
 Macro-F1 drop = clean Macro-F1 - corrupted Macro-F1
 ```
 
-The thesis claim is supported if:
+The project claim is supported if:
 
 * E2-canonical and/or E2-8 have smaller Macro-F1 drops than E0 under image corruption
 * E2-canonical and/or E2-8 have smaller Macro-F1 drops than E1 under IoT corruption
@@ -1535,7 +1535,7 @@ README.md
 
 ## Secondary augmented-training plan
 
-Supervisor update on 2026-06-10:
+Update on 2026-06-10:
 
 ```text
 Train the model with augmented images and clean images and test the model in
@@ -1563,7 +1563,7 @@ train clean + augmented images -> test clean + augmented/corrupted
 
 ### Scope recommendation
 
-Start with E0 image-only because the supervisor specifically mentioned augmented images.
+Start with E0 image-only because augmented images were the specific focus.
 This is the fastest and cleanest interpretation of the request.
 
 Recommended first model:
@@ -2083,9 +2083,9 @@ The task is complete when:
 
 ---
 
-## Final thesis interpretation
+## Final project interpretation
 
-The study supports the P2 claim if:
+The study supports the phase 2 claim if:
 
 * E2-canonical and/or E2-8 lose less Macro-F1 than E0 when images are corrupted.
 * E2-canonical and/or E2-8 lose less Macro-F1 than E1 when IoT is corrupted.

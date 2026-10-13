@@ -1,6 +1,6 @@
 # Corruption Robustness Study
 
-This folder contains the P2 corruption-robustness harness. The study evaluates whether
+This folder contains the phase 2 corruption-robustness harness. The study evaluates whether
 multimodal fusion degrades more gracefully than unimodal models when only the test data is
 corrupted.
 
@@ -206,7 +206,7 @@ corruption_study/results/degradation_curve_data.csv
 corruption_study/results/drop_summary_with_ci.csv
 corruption_study/results/difference_of_drops_bootstrap.csv
 corruption_study/results/difference_of_drops_summary.csv
-corruption_study/results/THESIS_STYLE_ROBUSTNESS_REPORT.md
+corruption_study/results/ROBUSTNESS_SUMMARY_REPORT.md
 corruption_study/results/plots/plot_manifest.csv
 ```
 
@@ -223,8 +223,8 @@ corruption_study/results/confusion/{run_name}__confusion.csv
 Use the project venv explicitly:
 
 ```powershell
-$PY = "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe"
-cd "G:\FOR THESIS\MAIN"
+$PY = "WORKSPACE\.venv-e1\Scripts\python.exe"
+cd "WORKSPACE"
 ```
 
 Run commands are maintained in:
@@ -239,7 +239,7 @@ Refresh summaries and reports from saved outputs:
 & $PY .\corruption_study\eval\enrich_metrics_with_bootstrap.py --results-dir .\corruption_study\results --n-bootstrap 1000 --seed 20260609
 & $PY .\corruption_study\eval\summarize_results.py --results-dir .\corruption_study\results
 & $PY .\corruption_study\eval\generate_report_artifacts.py --results-dir .\corruption_study\results
-& $PY .\corruption_study\eval\generate_thesis_report.py --results-dir .\corruption_study\results --output .\corruption_study\results\THESIS_STYLE_ROBUSTNESS_REPORT.md
+& $PY .\corruption_study\eval\generate_robustness_report.py --results-dir .\corruption_study\results --output .\corruption_study\results\ROBUSTNESS_SUMMARY_REPORT.md
 & $PY .\corruption_study\eval\bootstrap_difference_of_drops.py --results-dir .\corruption_study\results --n-bootstrap 1000 --seed 20260610
 & $PY .\corruption_study\eval\generate_plots.py --results-dir .\corruption_study\results
 ```
@@ -253,7 +253,7 @@ accuracy alone:
 Macro-F1 drop = clean Macro-F1 - corrupted Macro-F1
 ```
 
-The thesis claim is supported when E2-canonical and/or E2-8 show smaller Macro-F1 drops than the
+The project claim is supported when E2-canonical and/or E2-8 show smaller Macro-F1 drops than the
 matching unimodal baseline under the same corrupted modality.
 
 The difference-of-drops bootstrap directly estimates:
@@ -283,7 +283,7 @@ corruption_study/scaffold_train_corrupted/README.md
 
 ## E3 Corruption Extension
 
-The supervisor-requested E3 extension has been completed. It evaluates E3 on the same corrupted TEST embeddings used by the E2 variants. This remains inference-only: no E3 training or fine-tuning was run.
+The follow-up E3 extension has been completed. It evaluates E3 on the same corrupted TEST embeddings used by the E2 variants. This remains inference-only: no E3 training or fine-tuning was run.
 
 Model keys added to the evaluator:
 
@@ -310,9 +310,9 @@ Outputs:
 
 ```text
 corruption_study/results/E3_CORRUPTION_EXTENSION_SUMMARY.md
-corruption_study/results/THESIS_STYLE_ROBUSTNESS_REPORT.md
+corruption_study/results/ROBUSTNESS_SUMMARY_REPORT.md
 docs/by_stage/09_corruption_robustness/E3_CORRUPTION_EXTENSION_SUMMARY.md
-docs/by_stage/09_corruption_robustness/THESIS_STYLE_ROBUSTNESS_REPORT.md
+docs/by_stage/09_corruption_robustness/ROBUSTNESS_SUMMARY_REPORT.md
 ```
 
 Coverage after E3 extension:

@@ -20,7 +20,7 @@
   "corruption_type": "drift",
   "severity": 3,
   "corruption_seed": null,
-  "image_root_used": "G:\\FOR THESIS\\MAIN\\Data\\test",
+  "image_root_used": "WORKSPACE\\Data\\test",
   "iot_csv_used": ".\\corruption_study\\data\\corrupted_iot\\drift\\sev_3\\test_iot_features.csv",
   "embedding_dir_used": ".\\corruption_study\\data\\corrupted_embeddings\\iot_corrupted_only\\drift\\sev_3",
   "num_samples": 5767,

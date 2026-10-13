@@ -20,7 +20,7 @@
   "corruption_type": "dropout",
   "severity": 2,
   "corruption_seed": 123,
-  "image_root_used": "G:\\FOR THESIS\\MAIN\\Data\\test",
+  "image_root_used": "WORKSPACE\\Data\\test",
   "iot_csv_used": ".\\corruption_study\\data\\corrupted_iot\\dropout\\sev_2\\cseed_123\\test_iot_features.csv",
   "embedding_dir_used": ".\\corruption_study\\data\\corrupted_embeddings\\iot_corrupted_only\\dropout\\sev_2\\cseed_123",
   "num_samples": 5767,

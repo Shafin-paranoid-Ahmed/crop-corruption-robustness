@@ -36,7 +36,7 @@ for _path in (
         sys.path.insert(0, str(_path))
 
 from common.models import E1MLP  # noqa: E402
-from common.thesis_eval import metrics_dict  # noqa: E402
+from common.eval_metrics import metrics_dict  # noqa: E402
 from e2_multimodal_fusion.scripts.train_e2_fusion import E2FusionHead  # noqa: E402
 
 

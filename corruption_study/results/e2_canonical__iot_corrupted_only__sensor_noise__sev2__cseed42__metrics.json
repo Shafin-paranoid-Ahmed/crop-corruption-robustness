@@ -20,7 +20,7 @@
   "corruption_type": "sensor_noise",
   "severity": 2,
   "corruption_seed": 42,
-  "image_root_used": "G:\\FOR THESIS\\MAIN\\Data\\test",
+  "image_root_used": "WORKSPACE\\Data\\test",
   "iot_csv_used": ".\\corruption_study\\data\\corrupted_iot\\sensor_noise\\sev_2\\cseed_42\\test_iot_features.csv",
   "embedding_dir_used": ".\\corruption_study\\data\\corrupted_embeddings\\iot_corrupted_only\\sensor_noise\\sev_2\\cseed_42",
   "num_samples": 5767,

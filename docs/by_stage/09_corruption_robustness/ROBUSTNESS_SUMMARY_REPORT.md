@@ -1,4 +1,4 @@
-# Thesis-Style Corruption Robustness Report
+# Corruption Robustness Summary Report
 
 This report is generated from saved metrics and predictions only. No model was retrained or re-evaluated while generating this report.
 

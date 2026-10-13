@@ -3,8 +3,8 @@
 Use the project venv explicitly:
 
 ```powershell
-$PY = "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe"
-cd "G:\FOR THESIS\MAIN"
+$PY = "WORKSPACE\.venv-e1\Scripts\python.exe"
+cd "WORKSPACE"
 ```
 
 These commands are for manual execution. They do not train models.
@@ -140,9 +140,9 @@ foreach ($corr in "sensor_noise","dropout") {
 }
 ```
 
-## 8. Supervisor-Requested E3 Corruption Evaluation
+## 8. Follow-up E3 Corruption Evaluation
 
-This is an inference-only extension requested by the supervisor. It evaluates E3 on the already materialized corrupted TEST inputs by reusing the existing corrupted embedding files. It does not train or fine-tune E3.
+This is an inference-only follow-up extension. It evaluates E3 on the already materialized corrupted TEST inputs by reusing the existing corrupted embedding files. It does not train or fine-tune E3.
 
 Models:
 
@@ -155,8 +155,8 @@ Use CPU for E3 VQC inference unless a working PennyLane GPU simulator is explici
 
 ```powershell
 $env:PYTHONDONTWRITEBYTECODE = "1"
-$PY = "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe"
-cd "G:\FOR THESIS\MAIN"
+$PY = "WORKSPACE\.venv-e1\Scripts\python.exe"
+cd "WORKSPACE"
 ```
 
 Clean and regenerated-clean sanity checks:
@@ -227,7 +227,7 @@ Refresh reports after E3 runs finish:
 & $PY .\corruption_study\eval\enrich_metrics_with_bootstrap.py --results-dir .\corruption_study\results --n-bootstrap 1000 --seed 20260609
 & $PY .\corruption_study\eval\summarize_results.py --results-dir .\corruption_study\results
 & $PY .\corruption_study\eval\generate_report_artifacts.py --results-dir .\corruption_study\results
-& $PY .\corruption_study\eval\generate_thesis_report.py --results-dir .\corruption_study\results --output .\corruption_study\results\THESIS_STYLE_ROBUSTNESS_REPORT.md
+& $PY .\corruption_study\eval\generate_robustness_report.py --results-dir .\corruption_study\results --output .\corruption_study\results\ROBUSTNESS_SUMMARY_REPORT.md
 & $PY .\corruption_study\eval\bootstrap_difference_of_drops.py --results-dir .\corruption_study\results --n-bootstrap 1000 --seed 20260610
 & $PY .\corruption_study\eval\generate_plots.py --results-dir .\corruption_study\results
 ```
@@ -247,7 +247,7 @@ corruption_study\run_e3_corruption_parallel.ps1
 Start from a clean E3 output state and run the full E3 corruption matrix with 4 concurrent jobs:
 
 ```powershell
-cd "G:\FOR THESIS\MAIN"
+cd "WORKSPACE"
 .\corruption_study\run_e3_corruption_parallel.ps1 -CleanE3Outputs -Throttle 4
 ```
 

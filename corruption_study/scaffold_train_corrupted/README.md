@@ -1,6 +1,6 @@
 # Secondary Augmented-Training Scaffold
 
-Supervisor update on 2026-06-10 requested a separate training arm:
+A 2026-06-10 follow-up requested a separate training arm:
 
 ```text
 Train the model with augmented images and clean images.

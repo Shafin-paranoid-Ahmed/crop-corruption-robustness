@@ -1,6 +1,6 @@
 # E3 Corruption Extension Summary
 
-Generated from saved metrics after the supervisor-requested E3 corrupted-data evaluation. No E3 training or fine-tuning was run.
+Generated from saved metrics after the follow-up E3 corrupted-data evaluation. No E3 training or fine-tuning was run.
 
 ## Output Coverage
 

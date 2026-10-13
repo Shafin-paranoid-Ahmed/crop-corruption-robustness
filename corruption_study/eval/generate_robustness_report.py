@@ -1,4 +1,4 @@
-"""Generate thesis-style corruption robustness report artifacts.
+"""Generate corruption robustness summary report artifacts.
 
 Reads enriched metrics CSVs only. Does not run inference or training.
 """
@@ -16,9 +16,9 @@ EXPLORATORY = {"e2_128_25"}
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Generate thesis-style robustness report")
+    parser = argparse.ArgumentParser(description="Generate robustness summary report")
     parser.add_argument("--results-dir", default="corruption_study/results")
-    parser.add_argument("--output", default="corruption_study/results/THESIS_STYLE_ROBUSTNESS_REPORT.md")
+    parser.add_argument("--output", default="corruption_study/results/ROBUSTNESS_SUMMARY_REPORT.md")
     return parser.parse_args()
 
 
@@ -165,7 +165,7 @@ def main():
     both["model"] = both["model"].map(model_label)
 
     with open(args.output, "w", encoding="utf-8") as f:
-        f.write("# Thesis-Style Corruption Robustness Report\n\n")
+        f.write("# Corruption Robustness Summary Report\n\n")
         f.write("This report is generated from saved metrics and predictions only. No model was retrained or re-evaluated while generating this report.\n\n")
         f.write("Primary framing:\n\n")
         f.write("- E0 vs E2-canonical/E2-8 under image corruption.\n")

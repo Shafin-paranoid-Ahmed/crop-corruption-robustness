@@ -125,8 +125,8 @@ if (!$SkipReports) {
     if ($LASTEXITCODE -ne 0) { throw "summarize failed" }
     & $PY .\corruption_study\eval\generate_report_artifacts.py --results-dir .\corruption_study\results
     if ($LASTEXITCODE -ne 0) { throw "report artifacts failed" }
-    & $PY .\corruption_study\eval\generate_thesis_report.py --results-dir .\corruption_study\results --output .\corruption_study\results\THESIS_STYLE_ROBUSTNESS_REPORT.md
-    if ($LASTEXITCODE -ne 0) { throw "thesis report failed" }
+    & $PY .\corruption_study\eval\generate_robustness_report.py --results-dir .\corruption_study\results --output .\corruption_study\results\ROBUSTNESS_SUMMARY_REPORT.md
+    if ($LASTEXITCODE -ne 0) { throw "robustness report failed" }
     & $PY .\corruption_study\eval\bootstrap_difference_of_drops.py --results-dir .\corruption_study\results --n-bootstrap 1000 --seed 20260610
     if ($LASTEXITCODE -ne 0) { throw "difference bootstrap failed" }
     & $PY .\corruption_study\eval\generate_plots.py --results-dir .\corruption_study\results

@@ -82,14 +82,14 @@
   - [x] `checkpoint_path`.
   - [x] `config_path`.
   - [x] `timestamp`.
-- [x] Generate final thesis-style robustness summary/report.
+- [x] Generate final summary robustness summary/report.
 - [x] Update `README.md` to fully cover reproduction and interpretation requirements from the plan.
 - [x] Update `IMPLEMENTATION_REPORT.md` after bootstrap and any `both_corrupted` runs.
 - [x] Optional: generate degradation/drop plots from the summary CSVs.
 - [x] Optional: bootstrap difference-of-drops between unimodal and multimodal models.
 - [x] Optional: create secondary train-on-corrupted scaffold only if it does not delay primary results.
 
-## E3 Corruption Extension - Supervisor Request
+## E3 Corruption Extension
 
 - [x] Repair `.venv-e1` so its base Python lives inside `.venv-e1`.
 - [x] Add E3 model keys to `run_corruption_eval.py`.
@@ -98,4 +98,4 @@
 - [x] Clean partial E3 generated outputs before rerun.
 - [x] Run full E3 corruption matrix from a clean E3 output state.
 - [x] Regenerate summaries, reports, bootstrap outputs, and plots after E3 runs complete.
-- [x] Update thesis-style interpretation after E3 results are complete.
+- [x] Update summary interpretation after E3 results are complete.

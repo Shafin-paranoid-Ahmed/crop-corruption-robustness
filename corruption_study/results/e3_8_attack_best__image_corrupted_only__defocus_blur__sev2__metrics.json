@@ -21,7 +21,7 @@
   "severity": 2,
   "corruption_seed": null,
   "image_root_used": ".\\corruption_study\\data\\corrupted_images\\defocus_blur\\sev_2",
-  "iot_csv_used": "G:\\FOR THESIS\\MAIN\\e1_iot_only\\features\\test_iot_features.csv",
+  "iot_csv_used": "WORKSPACE\\e1_iot_only\\features\\test_iot_features.csv",
   "embedding_dir_used": ".\\corruption_study\\data\\corrupted_embeddings\\image_corrupted_only\\defocus_blur\\sev_2",
   "num_samples": 5767,
   "macro_precision": 0.5118796819762403,

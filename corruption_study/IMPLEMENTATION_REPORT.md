@@ -9,7 +9,7 @@ The MVP corruption-robustness harness is complete through report-artifact genera
 
 No model training was run.
 No validation or training data was corrupted.
-No E3/VQC/quantum code was added for the P2 corruption harness.
+No E3/VQC/quantum code was added for the phase 2 corruption harness.
 
 Completed MVP scope:
 
@@ -43,7 +43,7 @@ both_corrupted pairings: not run
 paired bootstrap confidence intervals: not yet computed
 ```
 
-Primary severity scope was updated by user request:
+Primary severity scope was updated on request:
 
 ```text
 clean sanity severity: 0
@@ -111,7 +111,7 @@ E2-8 source:
 
 `corruption_study/eval/run_corruption_eval.py` reuses the same architecture definitions/patterns
 for inference. It defines the E2-8 classical bottleneck locally to avoid importing quantum/VQC
-code into the P2 corruption harness.
+code into the phase 2 corruption harness.
 
 ## Selected Checkpoints
 
@@ -165,7 +165,7 @@ E2-8:
   test ECE: 0.24833769909230058
 ```
 
-Severity-0 clean rerun metrics for all four models were completed by the user and verified.
+Severity-0 clean rerun metrics for all four models were completed by the author and verified.
 They reproduce the audited clean accuracy and Macro F1 values exactly for E0, E1,
 E2-canonical, and E2-8.
 
@@ -259,7 +259,7 @@ e3_bottleneck_sweep/results/iot_robustness/
 e3_bottleneck_sweep/results/iot_robustness_stability/
 ```
 
-These are references only. The P2 corruption study should stay in `corruption_study/` and
+These are references only. The phase 2 corruption study should stay in `corruption_study/` and
 should not implement or run E3/VQC code.
 
 ## Commands Run For Audit
@@ -269,7 +269,7 @@ and `rg`. No Python harness command was run.
 
 ## Phase 2 Passthrough Checkpoint
 
-User reported passthrough generation complete. Verified by file count:
+Passthrough generation was reported complete. Verified by file count:
 
 ```text
 corruption_study/data/corrupted_images/passthrough/*.png recursive count: 5,767
@@ -279,7 +279,7 @@ Data/test.csv rows: 5,767
 This confirms the materialized passthrough image set exists and matches the test manifest row
 count.
 
-Passthrough E0 evaluation was then completed by the user and verified from saved outputs:
+Passthrough E0 evaluation was then completed by the author and verified from saved outputs:
 
 ```text
 metrics:
@@ -310,7 +310,7 @@ status:
 
 ## Severity-0 Clean Sanity Check
 
-User ran severity-0 clean evaluation for all four models. Verified outputs:
+The author ran severity-0 clean evaluation for all four models. Verified outputs:
 
 ```text
 metrics:
@@ -360,7 +360,7 @@ E2-8:
 
 ## MVP Image Corruption Checkpoint
 
-User ran the old MVP image command before brightness was split. Verified generated files:
+The author ran the old MVP image command before brightness was split. Verified generated files:
 
 ```text
 gaussian_noise:
@@ -416,7 +416,7 @@ Run MVP IoT corruption generation next:
 
 ## MVP IoT And Embedding Checkpoint
 
-User ran IoT generation and embedding-regeneration commands. Verified:
+The author ran IoT generation and embedding-regeneration commands. Verified:
 
 ```text
 IoT corrupted CSVs:
@@ -441,7 +441,7 @@ image_corrupted_only/brightness_increase embeddings
 image_corrupted_only/brightness_decrease embeddings
 ```
 
-Follow-up completed by user and verified:
+Follow-up completed and verified:
 
 ```text
 image_corrupted_only/brightness_increase:
@@ -476,7 +476,7 @@ Compare regenerated clean TEST embeddings against existing clean E2/E2-8 metrics
 
 ## MVP Evaluation Matrix Checkpoint
 
-User ran the clean-regenerated sanity check plus MVP image/IoT corruption evaluations.
+The author ran the clean-regenerated sanity check plus MVP image/IoT corruption evaluations.
 Verified output coverage:
 
 ```text
@@ -536,7 +536,7 @@ Next command:
 
 ## Summary Files Checkpoint
 
-User ran `summarize_results.py`. Verified outputs:
+The author ran `summarize_results.py`. Verified outputs:
 
 ```text
 corruption_study/results/all_metrics.csv
@@ -623,13 +623,13 @@ passthrough_sanity_check.md: PASS for E0 passthrough
 Commands run:
 
 ```powershell
-& "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe" .\corruption_study\eval\summarize_results.py --results-dir .\corruption_study\results
-& "G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe" .\corruption_study\eval\generate_report_artifacts.py --results-dir .\corruption_study\results
+& "WORKSPACE\.venv-e1\Scripts\python.exe" .\corruption_study\eval\summarize_results.py --results-dir .\corruption_study\results
+& "WORKSPACE\.venv-e1\Scripts\python.exe" .\corruption_study\eval\generate_report_artifacts.py --results-dir .\corruption_study\results
 ```
 
 ## Full Single-Modality Expansion Checkpoint
 
-User generated/evaluated the remaining planned single-modality corruptions:
+The author generated/evaluated the remaining planned single-modality corruptions:
 
 ```text
 image_corrupted_only:
@@ -811,7 +811,7 @@ Generated final report artifacts:
 corruption_study\results\bootstrap_settings.json
 corruption_study\results\degradation_curve_data.csv
 corruption_study\results\drop_summary_with_ci.csv
-corruption_study\results\THESIS_STYLE_ROBUSTNESS_REPORT.md
+corruption_study\results\ROBUSTNESS_SUMMARY_REPORT.md
 ```
 
 ## Optional Outputs Checkpoint
@@ -846,7 +846,7 @@ seed: 20260610
 interpretation: positive difference-of-drops means the multimodal model degraded less
 ```
 
-The thesis-style report was regenerated to include additional robustness metrics:
+The summary report was regenerated to include additional robustness metrics:
 
 ```text
 Macro-F1
@@ -863,9 +863,9 @@ difference-of-drops summary
 The secondary train-on-corrupted arm remains documentation-only. No corrupted-training data was
 generated and no training was run.
 
-## Supervisor Secondary Augmented-Training Plan
+## Secondary Augmented-Training Plan
 
-Supervisor requested on 2026-06-10:
+Planned on 2026-06-10:
 
 ```text
 train the model with augmented images and clean images
@@ -897,7 +897,7 @@ No training or data generation was run for this plan update.
 
 ## E3 Corruption Evaluation Extension Checkpoint
 
-Supervisor-requested extension on 2026-06-26:
+Follow-up extension on 2026-06-26:
 
 ```text
 Run E3 on the corrupted data and review whether there is any improvement.
@@ -907,13 +907,13 @@ Environment repair completed before E3 evaluation:
 
 ```text
 .venv-e1 remains the main project environment:
-  G:\FOR THESIS\MAIN\.venv-e1\Scripts\python.exe
+  WORKSPACE\.venv-e1\Scripts\python.exe
 
 The venv base was moved inside .venv-e1:
-  G:\FOR THESIS\MAIN\.venv-e1\.base-python
+  WORKSPACE\.venv-e1\.base-python
 
 Updated .venv-e1\pyvenv.cfg:
-  home = G:\FOR THESIS\MAIN\.venv-e1\.base-python
+  home = WORKSPACE\.venv-e1\.base-python
   include-system-site-packages = true
   version = 3.10.20
 ```
@@ -961,7 +961,7 @@ e3_8_vqc clean_regen Macro F1:    0.943423
 e3_8_attack_best clean_regen Macro F1: 0.969652
 ```
 
-Partial E3 corrupted evaluation completed before the user requested all processes stop:
+Partial E3 corrupted evaluation completed before the author requested all processes stop:
 
 ```text
 Completed condition:
@@ -1001,7 +1001,7 @@ Refresh summary/report artifacts after all E3 metrics are complete.
 
 ## E3 Partial Output Cleanup And Parallel Runner Update
 
-User instruction on 2026-06-26:
+Instruction on 2026-06-26:
 
 ```text
 Clean all partial files generated by the interrupted E3 runs.
@@ -1037,7 +1037,7 @@ This better utilizes CPU hardware than a single serial VQC inference process.
 Recommended command:
 
 ```powershell
-cd "G:\FOR THESIS\MAIN"
+cd "WORKSPACE"
 .\corruption_study\run_e3_corruption_parallel.ps1 -CleanE3Outputs -Throttle 4
 ```
 
@@ -1056,7 +1056,6 @@ corruption_study\RUN_COMMANDS.md
 corruption_study\README.md
 corruption_study\CHECKLIST.md
 corruption_study\IMPLEMENTATION_REPORT.md
-docs\by_stage\00_context_audit\FOR_THESIS_CONTEXT.md
 ```
 
 Current E3 status after cleanup:
@@ -1107,7 +1106,7 @@ docs\by_stage\09_corruption_robustness\E3_CORRUPTION_EXTENSION_SUMMARY.md
 Updated stage report copy:
 
 ```text
-docs\by_stage\09_corruption_robustness\THESIS_STYLE_ROBUSTNESS_REPORT.md
+docs\by_stage\09_corruption_robustness\ROBUSTNESS_SUMMARY_REPORT.md
 ```
 
 Clean sanity metrics:
@@ -1142,7 +1141,7 @@ Retained durable artifacts:
   E3 prediction CSV files
   E3 confusion CSV files
   all summary CSV files
-  thesis/report Markdown files
+  project/report Markdown files
   plots
 ```
 
